@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Politana - Modern Restaurant</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background: #ff6b6b;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      background-blend-mode: multiply;
+    }
+
+    .hero h2 {
+      font-size: 4rem;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    /* Menu Section */
+    .menu {
+      padding: 80px 20px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .menu h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #ff6b6b;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .menu-item {
+      display: inline-block;
+      width: 300px;
+      margin: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .menu-item h3 {
+      font-size: 1.5rem;
+      margin: 15px 0;
+      color: #333;
+    }
+
+    .menu-item p {
+      font-size: 1rem;
+      color: #777;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>La Politana</h1>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h2>Welcome to La Politana</h2>
+      <p>Experience the finest flavors in town</p>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-item">
+      <img src="https://via.placeholder.com/300x200" alt="Dish 1">
+      <h3>Classic Pasta</h3>
+      <p>Delicious pasta with a rich tomato sauce.</p>
+    </div>
+    <div class="menu-item">
+      <img src="https://via.placeholder.com/300x200" alt="Dish 2">
+      <h3>Grilled Salmon</h3>
+      <p>Freshly grilled salmon with herbs.</p>
+    </div>
+    <div class="menu-item">
+      <img src="https://via.placeholder.com/300x200" alt="Dish 3">
+      <h3>Tiramisu</h3>
+      <p>Traditional Italian dessert.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 La Politana. All rights reserved.</p>
+  </footer>
+
+  <!-- GSAP for Smooth Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script>
+    // GSAP Animations
+    gsap.from("header h1", { duration: 1, y: -50, opacity: 0, ease: "power2.out" });
+    gsap.from(".hero h2", { duration: 1, y: 50, opacity: 0, delay: 0.5, ease: "power2.out" });
+    gsap.from(".hero p", { duration: 1, y: 50, opacity: 0, delay: 1, ease: "power2.out" });
+    gsap.from(".menu-item", { duration: 1, y: 50, opacity: 0, stagger: 0.3, delay: 1.5, ease: "power2.out" });
+  </script>
+</body>
+</html>
